@@ -8,9 +8,6 @@ submissions = []  # List of tuples (student_id, assignment_id, score_percentage)
 
 # Load assignments data from 'assignments.txt'
 def load_assignments(file_path):
-    if not os.path.exists(file_path):
-        print(f"Error: The file '{file_path}' does not exist.")
-        return
     with open(file_path, 'r') as file:
         lines = file.readlines()
         for i in range(0, len(lines), 3):
@@ -21,9 +18,6 @@ def load_assignments(file_path):
 
 # Load students data from 'students.txt'
 def load_students(file_path):
-    if not os.path.exists(file_path):
-        print(f"Error: The file '{file_path}' does not exist.")
-        return
     with open(file_path, 'r') as file:
         lines = file.readlines()
         for line in lines:
@@ -41,9 +35,6 @@ def load_students(file_path):
 
 # Load submissions data from a directory
 def load_submissions(submission_dir):
-    if not os.path.exists(submission_dir):
-        print(f"Error: The directory '{submission_dir}' does not exist.")
-        return
     for filename in os.listdir(submission_dir):
         file_path = os.path.join(submission_dir, filename)
         with open(file_path, 'r') as file:
